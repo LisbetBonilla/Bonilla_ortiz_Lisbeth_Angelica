@@ -51,7 +51,7 @@ public class ObraDeArte {
             System.out.println(ArrayDeObras[n]);
         }
     }
-    
+
     /* GETTERS************************************ */
     public int getId() {
         return id;
