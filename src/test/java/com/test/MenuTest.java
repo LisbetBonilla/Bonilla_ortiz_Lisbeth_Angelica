@@ -25,7 +25,6 @@ public class MenuTest {
 
     private static final int OBRAS_EXPUESTAS = 1;
     private static final int DAR_DE_ALTA_UNA_NUEVA_OBRA = 2;
-    private static final int MODIFICAR_LOS_DATOS = 3;
     private static final int DETALLES = 4;
     private static final int PRECIOS = 5;
     private static final int ETIQUETA = 6;
@@ -39,13 +38,103 @@ public class MenuTest {
         OBRA_CON_MATERIAL = new ObraDeArte(ID, NOMBRE, AUTOR, TECNICA, MATERIAL, PRECIO, ALTURA, PESO, PIEZAS, DESC);
     }
 
-    @AfterEach
-    void borroObjetoObraConMaterial() {
-        OBRA_CON_MATERIAL = null;
-    }
     @Test
     void entrarAObrasExpuestas() {
         DONDE_VA_EL_USUARIO = 1;
         assertTrue(DONDE_VA_EL_USUARIO == OBRAS_EXPUESTAS, "no entra en obras expuestas");
     }
+    @Test
+    void entrarADarDeAltaUnaNuevaObra() {
+        DONDE_VA_EL_USUARIO = 2;
+        assertTrue(DONDE_VA_EL_USUARIO == DAR_DE_ALTA_UNA_NUEVA_OBRA, "no entra en dar de alta una nueva obra");
+    }
+
+
+    @Test
+    void entrarADetalles() {
+        DONDE_VA_EL_USUARIO = 4;
+        assertTrue(DONDE_VA_EL_USUARIO == DETALLES, "no entra en detalles");
+    }
+
+    @Test
+    void entrarAPrecios() {
+        DONDE_VA_EL_USUARIO = 5;
+        assertTrue(DONDE_VA_EL_USUARIO == PRECIOS, "no entra en precios");
+    }
+
+    @Test
+    void entrarAEtiqueta() {
+        DONDE_VA_EL_USUARIO = 6;
+        assertTrue(DONDE_VA_EL_USUARIO == ETIQUETA, "no entra en etiqueta");
+    }
+
+    @Test
+    void Salir() {
+        DONDE_VA_EL_USUARIO = 7;
+        assertTrue(DONDE_VA_EL_USUARIO == SALIR, "no puede salir");
+    }
+
+    @Test
+    void entrarAMenuPrincipal() {
+        DONDE_VA_EL_USUARIO = 8;
+        assertTrue(DONDE_VA_EL_USUARIO == MENU_PRINCIPAL, "no entra en el menu principal");
+    }
+
+
+    // geters
+
+    @Test
+    void elIdSeDevuelveBien() {
+        assertTrue(ID == OBRA_CON_MATERIAL.getId(), "el id se devuelve mal");
+    }
+
+    @Test
+    void elNombrSeDevuelveBien() {
+        assertTrue(NOMBRE == OBRA_CON_MATERIAL.getNombre(), "el nombre se devuelve mal");
+    }
+
+    @Test
+    void elAutorSeDevuelveBien() {
+        assertTrue(AUTOR == OBRA_CON_MATERIAL.getAutor(), "el autor se devuelve bien");
+    }
+
+    @Test
+    void laTecnicaSeDevuelveBien() {
+        assertTrue(TECNICA == OBRA_CON_MATERIAL.getTecnica(), "la tecnica se devuelve mal");
+    }
+
+    @Test
+    void elMaterialSeDevuelveBien() {
+        assertTrue(MATERIAL == OBRA_CON_MATERIAL.getMaterial(), "el material se devuelve mal");
+    }
+
+    @Test
+    void elPrecioSeDevuelveBien() {
+        assertTrue(PRECIO == OBRA_CON_MATERIAL.getPrecio(), "el precio se devuelve mal");
+    }
+
+    @Test
+    void laAlturaSeDevuelveBien() {
+        assertTrue(ALTURA == OBRA_CON_MATERIAL.getAltura(), "la altura se devuelve mal");
+    }
+
+    @Test
+    void elPesoSeDevuelveBien() {
+        assertTrue(PESO == OBRA_CON_MATERIAL.getPeso(), "el peso se devuelve mal");
+    }
+
+    @Test
+    void lasPiezasSeDevuelveBien() {
+        assertTrue(PIEZAS == OBRA_CON_MATERIAL.getPiezas(), "las piezas se devuelven mal");
+    }
+
+    @Test
+    void laDescripccionSeDevuelveBien() {
+        assertTrue(DESC == OBRA_CON_MATERIAL.getDescripcion(), "la descripcion se devuelve mal");
+    }
+
+
+
+
 }
+
